@@ -24,9 +24,9 @@ export default function Home(){
 
   useEffect(() => {
     const render = async () => {
-      // console.log('abc');
+      console.log('abc');
     if(word !== undefined) {  
-      // console.log('abc');      
+      console.log('abc');      
          if(word[1] !== undefined ){
           await axios.get(API_SUCCESS_MAIL + token[1])
          }
