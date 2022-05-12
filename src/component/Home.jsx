@@ -24,7 +24,7 @@ export default function Home(){
     const render = async () => {
       
     if(token !== undefined) {     
-      console.log(word);
+      // console.log(word);
         return  await axios.get(API_SUCCESS_MAIL + token)
         // console.log(res);
       }   
@@ -71,8 +71,8 @@ export default function Home(){
                 data : update,
               })
               // document.cookie = `jwt_user=${res.data.accessToken}; expires= `
-              window.location.href = '/#/email_confirm/'
-              window.location.reload()
+              window.location.replace("https://hungkhanhnguyen2103.github.io/form_active/#/email_confirm/") 
+              
             }
             render()
           } 
@@ -82,8 +82,8 @@ export default function Home(){
     }    
     else setTimeout(() => {
         // document.cookie = `jwt_user=${res.data.accessToken}; expires= `
-        window.location.href = '/#/email_confirm/'
-        window.location.reload()
+        window.location.replace("https://hungkhanhnguyen2103.github.io/form_active/#/email_confirm/") 
+        
     }, 100);
     
     // else 
