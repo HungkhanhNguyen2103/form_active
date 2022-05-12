@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios'
 import swal from 'sweetalert'
+import { cookieFilter } from "../helper";
 
 
 export default function Home(){
@@ -9,9 +10,9 @@ export default function Home(){
   
   const API_MAIL = "https://send-email-1.herokuapp.com/send_email"
 
-  const word = window.location.href.split('?jwt=')
-  const token = word[1]
- 
+  // const word = window.location.href.split('?jwt=')
+  // const token = word[1]
+  const token = cookieFilter()
 
   const [field,setField] = useState({
     code : '',
@@ -24,7 +25,7 @@ export default function Home(){
     const render = async () => {
       
     if(token !== undefined) {     
-      // console.log(word);
+      console.log(token);
         return  await axios.get(API_SUCCESS_MAIL + token)
         // console.log(res);
       }   
