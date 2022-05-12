@@ -73,6 +73,9 @@ export default function Home(){
               document.cookie = `jwt_user=${res.data.accessToken}; expires= `
               // window.location.replace("https://hungkhanhnguyen2103.github.io/form_active/#/email_confirm/") 
               window.location.href = "/form_active/#/email_confirm"
+              setTimeout(() => {
+                window.location.reload()
+              }, 100);
               
             }
             render()
@@ -85,7 +88,9 @@ export default function Home(){
         document.cookie = `jwt_user=${res.data.accessToken}; expires= `
         // window.location.replace("https://hungkhanhnguyen2103.github.io/form_active/#/email_confirm/") 
         window.location.href = "/form_active/#/email_confirm"
-        
+        setTimeout(() => {
+          window.location.reload()
+        }, 100);
     }, 100);
     
     // else 
