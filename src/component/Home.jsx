@@ -71,7 +71,7 @@ export default function Home(){
                 data : update,
               })
               // document.cookie = `jwt_user=${res.data.accessToken}; expires= `
-              window.location.href = '/#/email_confirm/'
+              window.location.href = 'form_active/#/email_confirm/'
             }
             render()
           } 
