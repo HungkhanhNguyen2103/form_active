@@ -7,7 +7,7 @@ export default function Home(){
 
   const API_SUCCESS_MAIL = 'https://confirm-email-1.herokuapp.com/email_success/'
   
-  const API_MAIL = 'https://confirm-email-1.herokuapp.com/send_email'
+  const API_MAIL = "https://send-email-1.herokuapp.com/send_email"
 
   const word = window.location.href.split('?jwt=')
   const token = word[1]
