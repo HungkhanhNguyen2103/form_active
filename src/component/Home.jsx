@@ -4,14 +4,14 @@ import swal from 'sweetalert'
 import { cookieFilter } from "../helper";
 
 
+
 export default function Home(){
 
   const API_SUCCESS_MAIL = 'https://confirm-email-1.herokuapp.com/email_success/'
   
   const API_MAIL = "https://send-email-1.herokuapp.com/send_email"
 
-  // const word = window.location.href.split('?jwt=')
-  // const token = word[1]
+  const word = window.location.href.split('?jwt=')
   const token = cookieFilter()
   
 
@@ -24,15 +24,17 @@ export default function Home(){
 
   useEffect(() => {
     const render = async () => {
-      
-    if(token !== undefined) {     
-      // console.log(token);
-        return  await axios.get(API_SUCCESS_MAIL + token[1])
+      // console.log('abc');
+    if(word !== undefined) {  
+      // console.log('abc');      
+         if(word[1] !== undefined ){
+          await axios.get(API_SUCCESS_MAIL + token[1])
+         }
         // console.log(res);
       }   
     }
     render();
-  }, [token])
+  }, [word,token])
   
 
   const onChangeField = (e) => {
@@ -102,7 +104,7 @@ export default function Home(){
     return(
         <>
         <div className="background" />
-        <div className="text"><span>{token !== undefined ? ('Xác thực thành công !') : ('Xin chào !')} </span></div>
+        <div className="text"><span>{word[1] !== undefined ? ('Xác thực thành công !') : ('Xin chào !')} </span></div>
         <div className="account">
           <div className="account__sign-up">
             <h4>Học viện bưu chính viễn thông</h4>

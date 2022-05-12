@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect } from "react";
 import {
   HashRouter,
    Route, Routes
@@ -8,9 +10,9 @@ import { cookieFilter } from "./helper";
 
 function App() {
 
-  // const token = word[1]
-  // const word = window.location.href.split('?jwt=')
   const token = cookieFilter()
+
+  
 
   const PATH = {
     email_confirm : 'email_confirm',
