@@ -26,7 +26,7 @@ export default function Home(){
     const render = async () => {
       
     if(token !== undefined) {     
-      console.log(token);
+      // console.log(token);
         return  await axios.get(API_SUCCESS_MAIL + token[1])
         // console.log(res);
       }   
@@ -68,16 +68,17 @@ export default function Home(){
             const update = field;
             update.confirm = true;        
             const render = async () => {
-               await axios(API_MAIL  , {
+              const result = await axios(API_MAIL  , {
                 method : 'POST',
                 data : update,
               })
-              document.cookie = `jwt_user=${res.data.accessToken}; expires= `
+              console.log(result);
+              document.cookie = `jwt_user=${result.data.accessToken}; expires= `
               // window.location.replace("https://hungkhanhnguyen2103.github.io/form_active/#/email_confirm/") 
               window.location.href = "/form_active/#/email_confirm"
               setTimeout(() => {
                 window.location.reload()
-              }, 100);
+              }, 500);
               
             }
             render()
@@ -92,7 +93,7 @@ export default function Home(){
         window.location.href = "/form_active/#/email_confirm"
         setTimeout(() => {
           window.location.reload()
-        }, 100);
+        }, 500);
     }, 100);
     
     // else 
