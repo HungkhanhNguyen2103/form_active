@@ -12,7 +12,8 @@ export default function Home(){
 
   // const word = window.location.href.split('?jwt=')
   // const token = word[1]
-  const token = cookieFilter()
+  const word = cookieFilter()
+  const token = word[1]
 
   const [field,setField] = useState({
     code : '',
