@@ -2,7 +2,7 @@
   "name": "form_active",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hungkhanhnguyen2103.github.io/form_active/",
+  "homepage": "https://hungkhanhnguyen2103.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
