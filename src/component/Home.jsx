@@ -9,7 +9,8 @@ export default function Home(){
 
   const API_SUCCESS_MAIL = 'https://confirm-email-1.herokuapp.com/email_success/'
   
-  const API_MAIL = "https://send-email-1.herokuapp.com/send_email"
+  // const API_MAIL = "https://send-email-1.herokuapp.com/send_email"
+  const API_MAIL = "http://localhost:8001/send_email"
 
   const word = window.location.href.split('?jwt=')
   const token = cookieFilter()
@@ -24,15 +25,17 @@ export default function Home(){
 
   useEffect(() => {
     const render = async () => {
-      console.log('abc');
+      // console.log('abc');
     if(word !== undefined) {  
-      console.log('abc');      
+      // console.log('abc');      
          if(word[1] !== undefined ){
-          await axios.get(API_SUCCESS_MAIL + token[1])
+          await axios.get(API_SUCCESS_MAIL + token[1])    
          }
+         
         // console.log(res);
       }   
     }
+    window.history.replaceState({},"/form_active/#/email_confirm")
     render();
   }, [word,token])
   
